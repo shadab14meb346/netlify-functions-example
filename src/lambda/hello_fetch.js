@@ -5,7 +5,7 @@ const perPage = 20;
 const currentPage = 1;
 const API_ENDPOINT = `https://api.github.com/repos/open-source-ideas/open-source-ideas/issues?per_page=${perPage}&page=${currentPage}`;
 exports.handler = async (event, context) => {
-	return fetch(API_ENDPOINT, { headers: { Accept: "application/json" } })
+	return fetch(API_ENDPOINT)
 		.then((response) => response.json())
 		.then((data) => ({
 			statusCode: 200,
