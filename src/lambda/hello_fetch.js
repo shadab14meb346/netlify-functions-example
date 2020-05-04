@@ -7,6 +7,7 @@ const API_ENDPOINT = "https://swapi.dev/api/people/1/";
 exports.handler = async (event, context) => {
 	return axios
 		.get(API_ENDPOINT)
+		.then((response) => response.json())
 		.then((data) => ({
 			statusCode: 200,
 			body: data,
